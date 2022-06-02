@@ -24,17 +24,8 @@ function searchMovie() {
         // console.log(result1)
         return result1.json()
     }).then(function (result2) {
-        console.log(result2)
-        let length = Object.keys(result2).length
-        if (length > 2) {
-            displayMovie(result2)
-        }
-        else {
-            displayDiv.innerHTML = null
-            let err = document.createElement('img')
-            err.src = "https://i.pinimg.com/originals/11/dc/96/11dc96d2e4daca3ea8ff6aa41299b5e1.gif"
-            displayDiv.append(err)
-        }
+        // console.log(result2)
+        displayMovie(result2)
     }).catch(function (err) {
         console.log(err)
     })
