@@ -2,13 +2,23 @@ let displayDiv = document.querySelector('#displayDiv')
 
 ////  url from --> https://www.omdbapi.com/
 
+//// default fetchc
+const url = 'https://www.omdbapi.com/?i=tt3896198&apikey=983f5710'
 
-
+fetch(url).then(function (result1) {
+    // console.log(result1)
+    return result1.json()
+}).then(function (result2) {
+    displayMovie(result2)
+    // console.log(result2)
+}).catch(function (err) {
+    console.log(err);
+})
 
 //// fetching according to the search result
 function searchMovie() {
     let movieName = document.querySelector('#input').value;
-    const url = `http://www.omdbapi.com/?t=${movieName}&apikey=983f5710`
+    const url = `https://www.omdbapi.com/?t=${movieName}&apikey=983f5710`
 
     fetch(url).then(function (result1) {
         // console.log(result1)
@@ -79,15 +89,3 @@ function displayMovie(obj) {
 
 
 
-//// default fetchc
-const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=983f5710'
-
-fetch(url).then(function (result1) {
-    // console.log(result1)
-    return result1.json()
-}).then(function (result2) {
-    displayMovie(result2)
-    // console.log(result2)
-}).catch(function (err) {
-    console.log(err);
-})
