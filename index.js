@@ -11,6 +11,8 @@ fetch(url).then(function (result1) {
 }).then(function (result2) {
     displayMovie(result2)
     // console.log(result2)
+}).catch(function (err) {
+    console.log(err);
 })
 
 
@@ -34,6 +36,8 @@ function searchMovie() {
             err.src = "https://i.pinimg.com/originals/11/dc/96/11dc96d2e4daca3ea8ff6aa41299b5e1.gif"
             displayDiv.append(err)
         }
+    }).catch(function (err) {
+        console.log(err)
     })
 }
 
