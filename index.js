@@ -2,18 +2,7 @@ let displayDiv = document.querySelector('#displayDiv')
 
 ////  url from --> https://www.omdbapi.com/
 
-const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=983f5710'
 
-//// default fetch
-fetch(url).then(function (result1) {
-    // console.log(result1)
-    return result1.json()
-}).then(function (result2) {
-    displayMovie(result2)
-    // console.log(result2)
-}).catch(function (err) {
-    console.log(err);
-})
 
 
 //// fetching according to the search result
@@ -88,3 +77,17 @@ function displayMovie(obj) {
     displayDiv.append(searchedMovie)
 }
 
+
+
+//// default fetchc
+const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=983f5710'
+
+fetch(url).then(function (result1) {
+    // console.log(result1)
+    return result1.json()
+}).then(function (result2) {
+    displayMovie(result2)
+    // console.log(result2)
+}).catch(function (err) {
+    console.log(err);
+})
