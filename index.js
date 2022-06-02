@@ -84,4 +84,3 @@ function displayMovie(obj) {
     displayDiv.append(searchedMovie)
 }
 
-searchMovie()
